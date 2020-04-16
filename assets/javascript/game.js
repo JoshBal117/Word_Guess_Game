@@ -1,4 +1,4 @@
-var words= [
+let words= [
     "storm",
     "cyclops",
     "spider-man",
@@ -10,6 +10,13 @@ var words= [
     "wolverine",
     "black widow",
     "black panther",
+    "marvel girl",
+
 ]
 
-var word = words[Math.floor(Math.random() * words.length)];
+let word = words[Math.floor(Math.random() * words.length)];
+
+let answerArray = [];
+for (var i =0; i < word.length; i++) {
+    answerArray[i] = "_";
+}
