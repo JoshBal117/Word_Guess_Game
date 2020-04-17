@@ -30,5 +30,5 @@ let remainingLetters = word.length;
 
 console.log(answerArray.join(" "))
 
-document.onkeydown = function(event)
+
 
