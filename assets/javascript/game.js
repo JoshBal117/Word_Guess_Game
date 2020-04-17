@@ -27,9 +27,49 @@ for (var i =0; i < word.length; i++) {
     answerArray[i] = "_";    
 }
 
+
+
 let remainingLetters = word.length;
 (answerArray.join(" "));
-//shows the blank spots for the random word
+//shows remaining spaces after a letter has been guessed correctly. 
 console.log(answerArray.join(" "))
+
+
+while(remainingLetters > 0) {
+    alert(answerArray.join(" "))
+    let guess = prompt("Guess a letter, or press Cancel to end game.")
+    if(guess === null) {
+        break; 
+        else if(guess.length !==1) {
+            alert("Please enter a single letter.");
+        } else{for (var j=0; j < word.length; j++) {
+            if (word[j] === guess) {
+                answerArray[j] = guess;
+                remainingLetters--;
+            }
+        }
+    }
+
+
+}
+
+
+
+
+//have the underscores replaced by a correct guess from the user
+document.onkeyup = function(event) {
+
+
+    if(word.includes(event.key)) {
+        console.log( "this actually works!")
+    }
+}
+
+         
+//game code is going to go here as well as
+//keep track of wrong guess
+//place right guesses into answer field
+//
+
 
 
