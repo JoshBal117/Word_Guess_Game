@@ -15,7 +15,6 @@ let words= [
 ]
 //To have, once user guesses the character; an image of the character and a sound byte to play at the same time
 //Need to have user input their guess into the game
-document.onkeydown
 
 let word = words[Math.floor(Math.random() * words.length)];
 console.log(word
@@ -23,11 +22,13 @@ console.log(word
 
 let answerArray = [];
 for (var i =0; i < word.length; i++) {
-    answerArray[i] = "_";
-    
+    answerArray[i] = "_";    
 }
 
 let remainingLetters = word.length;
 (answerArray.join(" "));
 
 console.log(answerArray.join(" "))
+
+document.onkeydown = function(event)
+
