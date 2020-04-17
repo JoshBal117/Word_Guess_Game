@@ -1,25 +1,27 @@
 let words= [
     "storm",
     "cyclops",
-    "spider-man",
-    "captain america",
+    "spiderman",
+    "captainamerica",
     "thor",
-    "iron Man",
+    "ironMan",
     "hulk",
-    "captain marvel",
+    "captainmarvel",
     "wolverine",
-    "black widow",
-    "black panther",
-    "marvel girl",
+    "blackwidow",
+    "blackpanther",
+    "marvelgirl",
 
 ]
 //To have, once user guesses the character; an image of the character and a sound byte to play at the same time
 //Need to have user input their guess into the game
 
+//set a string for generating the random word from
+//a list already provided. 
 let word = words[Math.floor(Math.random() * words.length)];
 console.log(word
     )
-
+//have a blank spaces for the word
 let answerArray = [];
 for (var i =0; i < word.length; i++) {
     answerArray[i] = "_";    
@@ -27,8 +29,7 @@ for (var i =0; i < word.length; i++) {
 
 let remainingLetters = word.length;
 (answerArray.join(" "));
-
+//shows the blank spots for the random word
 console.log(answerArray.join(" "))
-
 
 
