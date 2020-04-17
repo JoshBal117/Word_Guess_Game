@@ -14,9 +14,18 @@ let words= [
 
 ]
 
-let word = words[Math.floor(Math.random() * words.length)];
 
+document.onkeydown
+
+let word = words[Math.floor(Math.random() * words.length)];
+console.log(word
+
+    )
+    
 let answerArray = [];
 for (var i =0; i < word.length; i++) {
     answerArray[i] = "_";
 }
+
+let remaigningLetters = word.length;
+(answerArray.join(""));
