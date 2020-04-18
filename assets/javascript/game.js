@@ -47,12 +47,13 @@ console.log(answerArray.join(" "))
 while(remainingLetters > 0) {
     console.log(answerArray.join(" "))
     //
-    let guess = console.log("Guess a letter, or press Cancel to stop playing.")
+    let guess = prompt("THIS WORKED!!")
     if(guess === null) {
         break;
-    } else if(guess.length !==1) {
-            console.log("Please enter a single letter.");
-        } else{for (var j=0; j < word.length; j++) {
+    } else if (guess.length !== 1) {
+        //updating the game state with a guess
+            console.log("this worked!");
+        } else {for (var j=0; j < word.length; j++) {
             if (word[j] === guess) {
                 answerArray[j] = guess;
                 remainingLetters--;
@@ -60,18 +61,5 @@ while(remainingLetters > 0) {
         }
     }
 }
-
-
-
-
-//have the underscores replaced by a correct guess from the user
-
-
-         
-//game code is going to go here as well as
-//keep track of wrong guess
-//place right guesses into answer field
-//
-
 
 
