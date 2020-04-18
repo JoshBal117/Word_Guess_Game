@@ -18,6 +18,7 @@ let words= [
     "warmachine",
     "daredevil",
     "kingpin",
+    "magneto",
 
 
 ]
@@ -47,12 +48,12 @@ console.log(answerArray.join(" "))
 while(remainingLetters > 0) {
     console.log(answerArray.join(" "))
     //
-    let guess = prompt("THIS WORKED!!")
+    let guess = console.log("THIS WORKED!!")
     if(guess === null) {
-        break;
+        console.log("this is working too!")
     } else if (guess.length !== 1) {
         //updating the game state with a guess
-            console.log("this worked!");
+            console.log("this worked too!");
         } else {for (var j=0; j < word.length; j++) {
             if (word[j] === guess) {
                 answerArray[j] = guess;
