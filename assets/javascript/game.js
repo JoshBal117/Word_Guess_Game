@@ -47,9 +47,11 @@ console.log(answerArray.join(" "))
 
 while(remainingLetters > 0) {
     console.log(answerArray.join(" "))
-    //
-    let guess = console.log("THIS WORKED!!")
+    //ensuring that the user's guess will appear
+    let guess = 
+    console.log("THIS WORKED!!")
     if(guess === null) {
+        break;
         console.log("this is working too!")
     } else if (guess.length !== 1) {
         //updating the game state with a guess
