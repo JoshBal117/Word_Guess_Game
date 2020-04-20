@@ -26,6 +26,8 @@ let words= [
     "magneto",
 
 ]
+//set all words to lowercase despite if a captial leetter is pressed
+
 //set a string for generating the random word from
 //a list already provided. 
 let word = words[Math.floor(Math.random() * words.length)];
@@ -51,7 +53,7 @@ let wrongGuess =[]
 
 let guessesLeft = 20;
 
-//
+//this function and loop allows realtime update on the blank array with a correctly guessed letter
 document.onkeydown = function(event){
   for (j = 0; j < word.length; j++){
     if(event.key === word.charAt(j)){
@@ -61,10 +63,12 @@ document.onkeydown = function(event){
   }
 }
 
-if(guessesLeft <= 0){
-  console.log("Don't choke on your aspirations!-Vader")
-}
+
 //set up a number of guesses to 20 guesses before game states a failure notification
+if(guessesLeft <= 0){
+  console.log("Do or do not, there is no try-Yoda")
+}
+
 
 //To have, once user guesses the character; an image of the character and a sound byte to play at the same time
 
