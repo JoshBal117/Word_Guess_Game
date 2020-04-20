@@ -4,28 +4,42 @@
 //After that we will need to have the emtpy spaces update after a correct guess
 
 let words= [
-    "storm",
-    "cyclops",
-    "spiderman",
-    "captainamerica",
-    "thor",
-    "ironman",
-    "hulk",
-    "captainmarvel",
-    "wolverine",
-    "blackwidow",
-    "blackpanther",
-    "marvelgirl",
-    "mrfantastic",
-    "drstrange",
-    "thanos",
-    "drdoom",
-    "warmachine",
-    "daredevil",
-    "kingpin",
-    "magneto",
-
+  "storm", 
+  "cyclops", 
+  "spiderman", 
+  "captainamerica", 
+  "thor", 
+  "ironman", 
+  "hulk", 
+  "captainmarvel", 
+  "wolverine", 
+  "blackwidow", 
+  "blackpanther", 
+  "marvelgirl", 
+  "mrfantastic", 
+  "drstrange", 
+  "thanos", 
+  "drdoom", 
+  "warmachine", 
+  "daredevil", 
+  "kingpin", 
+  "magneto", 
+  "juggernaut", 
+  "namor", 
+  "blackbolt", 
+  "professorx", 
+  "mrfantastic",
+  "venom",
+  "invisiblewoman",
+  "humantorch",
+  "emmafrost",
+  "loki",
 ]
+
+let wrongGuess =[]
+let guessesLeft = 10;
+
+
 //set all words to lowercase despite if a captial leetter is pressed
 
 //set a string for generating the random word from
@@ -48,11 +62,6 @@ console.log(answerArray.join(" "))
 
 //Need to have user input their guess into the game
 
-let wrongGuess =[]
-
-
-let guessesLeft = 20;
-
 //this function and loop allows realtime update on the blank array with a correctly guessed letter
 document.onkeydown = function(event){
   for (j = 0; j < word.length; j++){
@@ -72,3 +81,7 @@ if(guessesLeft <= 0){
 
 //To have, once user guesses the character; an image of the character and a sound byte to play at the same time
 
+//DOM Manipulation for the page
+//Have each of the elements not in console log but display on the page
+//
+//have 
