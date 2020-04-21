@@ -53,6 +53,9 @@ let solved = 0;
 
 //set a string for generating the random word from
 //a list already provided. 
+
+
+
 let word = words[Math.floor(Math.random() * words.length)];
 console.log(word)
 //have a blank spaces for the word
