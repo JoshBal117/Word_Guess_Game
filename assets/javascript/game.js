@@ -34,12 +34,21 @@ let words= [
   "humantorch",
   "emmafrost",
   "loki",
+  "greengoblin",
+  "punisher",
+  "milesmorales",
+  "toad",
+  "sabertooth",
+  "jubilee",
+  "gambit",
+  "beast",
+
 ]
-
-let wrongGuess =[]
+//my global variables
+let wins = 0;
+let wrongGuess =[];
 let guessesLeft = 10;
-
-
+let solved = 0;
 //set all words to lowercase despite if a captial leetter is pressed
 
 //set a string for generating the random word from
@@ -51,9 +60,6 @@ let answerArray = [];
 for (var i =0; i < word.length; i++) {
     answerArray[i] = "_";    
 }
-
-
-
 
 let remainingLetters = word.length;
 (answerArray.join(" "));
@@ -67,16 +73,15 @@ document.onkeydown = function(event){
   for (j = 0; j < word.length; j++){
     if(event.key === word.charAt(j)){
       answerArray.splice(j, 1, event.key)
-      console.log(answerArray.join (" "))
+      console.log(answerArray.join (" "))    
     }
   }
-}
+};
 
-
-//set up a number of guesses to 20 guesses before game states a failure notification
+//set up a number of guesses to 10 guesses before game states a failure notification
 if(guessesLeft <= 0){
   console.log("Do or do not, there is no try-Yoda")
-}
+};
 
 
 //To have, once user guesses the character; an image of the character and a sound byte to play at the same time
