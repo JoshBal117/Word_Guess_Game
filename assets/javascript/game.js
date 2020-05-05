@@ -168,5 +168,20 @@ function evaluateGuess(letter) {
     }
   }
 
+  //this the event listener for the keys being oressed by the user's keyboard. 
+  document.onkeydown = function(event) {
+    //
+    if(finishedGame) {
+      startGame();
+      finishedGame = false;
+    } else {
+      //This will make sure that letters a-z are pressed.
+      if (event.keyCode >= 65 && event.keyCode <= 90) {
+        makeGuess(event.key.toLowerCase());
+        refreshScreen();
+        checkWin();
+        checkLoss();
+      }
+    }
+  }
 
-  
