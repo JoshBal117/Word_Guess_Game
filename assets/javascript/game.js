@@ -116,7 +116,22 @@ document.getElementById("youwin-image").style.css.text= 'display:none'
 function evaluateGuess(letter) {
   let positions = [];
 
-  
+
+  for (let i = 0; i < marvelCharacters.length; i++) {
+    if (marvelCharacters[comPick][i] === letter) {
+      positions.push(i);
+    }console.log(letter)
+    
+  }
+    if (position.length <= 0) {
+      guessesLeft--;
+    } else {
+      for (let i = 0; i < positions.length; i++) {
+        wordGuessed[positions[i]] = letter;
+        
+      }
+    }
+
 }
 
 // let remainingLetters = word.length;
