@@ -1,3 +1,4 @@
+document.ready
 //My steps are define my global variables
 //Then to have a randomizer array to randomly select a word
 //Next step is set up a blank array to for the guessable word. 
@@ -87,11 +88,12 @@ document.getElementById("pressKeyTryAgain").style.css.text= 'display:none'
 document.getElementById("gameover-image").style.css.text= 'display:none'
 document.getElementById("youwin-image").style.css.text= 'display:none'
 
+            //this function will refresh the screen
+            refreshScreen();
 
+};
 
-}
-
-
+//this will update the page with a new word without 
 
 //have a blank spaces for the word
 
