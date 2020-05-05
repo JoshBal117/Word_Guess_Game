@@ -134,29 +134,15 @@ function evaluateGuess(letter) {
 
 }
 
-// let remainingLetters = word.length;
-// (answerArray.join(" "));
-// //shows remaining spaces after a letter has been guessed correctly. 
-// console.log(answerArray.join(" "))
+//this will checka nd see if the all the correct letter have been entered and the round ends
 
-// //Need to have user input their guess into the game
+  function checkWin() {
+    if(wordguessed.indexOf("_") ===  -1) {
+      document.getElementById("youwin-image").style.csstext = "display: block";
+      document.getElementById("pressLeyTryAgain").style.csstext = "display: block";
+      wins++;
+      finishedGame = true;
+    }
+  }
 
-// //this function and loop allows realtime update on the blank array with a correctly guessed letter
-// document.onkeydown = function(event){
-//   for (j = 0; j < word.length; j++){
-//     if(event.key === word.charAt(j)){
-//       answerArray.splice(j, 1, event.key)
-//       console.log(answerArray.join (" "))    
-//     }
-//   }
-// };
-
-//set up a number of guesses to 10 guesses before game states a failure notification
-
-
-//To have, once user guesses the character; an image of the character and a sound byte to play at the same time
-
-//DOM Manipulation for the page
-//Have each of the elements not in console log but display on the page
-//
-//have 
+  
