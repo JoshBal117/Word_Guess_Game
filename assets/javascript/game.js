@@ -145,4 +145,28 @@ function evaluateGuess(letter) {
     }
   }
 
+  //this is to check if the user is out of guesses, and if so then the game will present a 
+  //loose message
+  function checkLoss() {
+    if (guessesLEft <= 0) {
+      document.getElementById("gameover-image").style.cssText = "display:block";
+      document.getElementById("pressKeyTryAgain").style.cssText = "display:block";
+      losses++;
+      finishedGame = true
+    }
+  }
+
+  //this is the function to make a guess by the user, it will make sure that the letter has not been used before. 
+  function makeGuess(letter) {
+    if (gguessesLeft > 0) {
+      //this is the portion that checks to see if we used this letter before
+      if (userGuesses.indexOf(letter) === -1) {
+          userGuesses.push(letter);
+          //this calls back to the evaluateGuess function
+          evaluateGuess(letter);
+      }
+    }
+  }
+
+
   
