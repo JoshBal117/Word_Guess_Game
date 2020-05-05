@@ -47,12 +47,12 @@ let marvelCharacters= [
 ]
 //my global variables
 let wins = 0; //this is how many wins the user has
-let losses = 0 //this is how many losses they have
+let losses = 0; //this is how many losses they have
 let wrongGuess =[]; //
 let guessesLeft = 10;
 let solved = 0;
-let userGuesses = []
-let finishedGame = false
+let userGuesses = [];
+let finishedGame = false;
 let comPick;
 
 
@@ -105,13 +105,19 @@ document.getElementById("youwin-image").style.css.text= 'display:none'
                 guessingWordText += wordGuessed[i]
               }
 
-              //
-  }
+              //updates he guesses, word, and letters entered into the UI 
 
-//this will update the page with a new word without 
+              document.getElementById("currentWord").innerText = guessingWordText;
+              document.getElementById("guessesLeft").innertext = guessesLeft;
+              document.getElementById("userGuesses").innertext = userGuesses;
+  };
 
-//have a blank spaces for the word
+//this functions compares and evaluates the entered letters to the character you're trying to guess
+function evaluateGuess(letter) {
+  let positions = [];
 
+  
+}
 
 // let remainingLetters = word.length;
 // (answerArray.join(" "));
