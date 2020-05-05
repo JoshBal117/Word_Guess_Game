@@ -92,6 +92,21 @@ document.getElementById("youwin-image").style.css.text= 'display:none'
             refreshScreen();
 
 };
+      //here is the acutal function
+  function refreshScreen() {
+
+
+
+              document.getElementById("gameWins").innertext = wins;
+              document.getElementById("gameLosses").innertext = losses;
+
+              let guessingWordText = "";
+              for (let i = 0; i < wordGuessed.length; i++) {
+                guessingWordText += wordGuessed[i]
+              }
+
+              //
+  }
 
 //this will update the page with a new word without 
 
