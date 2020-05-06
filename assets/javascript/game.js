@@ -64,8 +64,8 @@ let comPick;
 //list of images for when the user correctly guesses the word
 
 
-function startgame() {
-      console.log("ready")
+function startGame() {
+      
   
         comPick = marvelCharacters[Math.floor(Math.random() * marvelCharacters.length)];
 
@@ -85,8 +85,6 @@ function startgame() {
             //these are the gamewin, gameover and titles
 
 document.getElementById("pressKeyTryAgain").style.css.text= 'display:none'
-document.getElementById("gameover-image").style.css.text= 'display:none'
-document.getElementById("youwin-image").style.css.text= 'display:none'
 
             //this function will refresh the screen
             refreshScreen();
@@ -138,7 +136,6 @@ function evaluateGuess(letter) {
 
   function checkWin() {
     if(wordguessed.indexOf("_") ===  -1) {
-      document.getElementById("youwin-image").style.csstext = "display: block";
       document.getElementById("pressLeyTryAgain").style.csstext = "display: block";
       wins++;
       finishedGame = true;
@@ -149,7 +146,6 @@ function evaluateGuess(letter) {
   //loose message
   function checkLoss() {
     if (guessesLEft <= 0) {
-      document.getElementById("gameover-image").style.cssText = "display:block";
       document.getElementById("pressKeyTryAgain").style.cssText = "display:block";
       losses++;
       finishedGame = true
@@ -158,7 +154,7 @@ function evaluateGuess(letter) {
 
   //this is the function to make a guess by the user, it will make sure that the letter has not been used before. 
   function makeGuess(letter) {
-    if (gguessesLeft > 0) {
+    if (guessesLeft > 0) {
       //this is the portion that checks to see if we used this letter before
       if (userGuesses.indexOf(letter) === -1) {
           userGuesses.push(letter);

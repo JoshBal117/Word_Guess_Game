@@ -3,48 +3,52 @@
 
     <head>
         <meta charset="UTF-8">
-        <div class="title"> 
-            HANGMAN
-            MARVEL EDITION
-        </div>
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="assets/css/reset.css">
-        <script src="assets/javascript/game.js"></script>
+        <link rel="stylesheet" href="assets/css/style.css">
+        
+        
     </head>
     <body>
-<!--using container as a title bar-->
-    <div class="container">
-        <h1 class="text-center"></h1>
-        <h2 class="text-center"> Marvel Comics Edition!
-            You have 10 attempts to guess the word correctly!
-            Good Luck! AVENGER"S ASSEMBLE!!</h2>
-        <button>PRESS START</button>
-    </div> <!--placing a container --> 
-            <div class="container">
-
-                <div class="row">
-
-                    <!--Game Answer-->
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <h3 class="card-header">Answer</h3>
-                            </div class="card-body">
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <h3 class="card-header">Player Guesses</h3>
-
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="text"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    </head>
+    <body>
+        <header>
+            <div class="header"></div>
+        </header>
+        <main class="container">
+        </div>
+            <table class="game-content">
+                <thead>
+                    <tr>
+                        <th colspan="2"><span class="hangTitle">HANGMAN: Marvel EDITION!</span>
+                            <h1 id="pressKeyTryAgain">Press Any Key to Try Again!</h1>
+                        </th>
+                    </tr>
+                </thead>  
+                <tbody>
+                    <tr>
+                        <td class="clue"></td>
+                        <td><h3 style="padding-bottom:5px;"><u>Press any Key start!</u></h3>
+                            <h4>Wins:</h4>  <div id="gameWins"></div>
+                            <h4>Current Word:</h4> <div id="currentWord"></div>
+                            <h4>Losses:</h4>  <div id="gameLosses"></div>
+                            <h4 style="padding-top:10px;">Guesses Left:</h4>  <div id="guessesLeft"></div>
+                            <h4>All Guesses:</h4>  <div id="userGuesses"></div>
+                        </td>
+                    </tr>
+                </tbody>      
+            </table>
+        </main>    
+        <footer class="footer">
+                <div class="container">
                 </div>
-            </div>
+        </footer>
+        <!-- Linking JS -->
+        <script type="text/javascript" src="assets/javascript/game.js"></script>    
+        <script>
+            startGame();
+            refreshScreen();
+        </script>
     </body>
-</html>
+    </html>
