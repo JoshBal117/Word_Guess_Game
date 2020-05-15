@@ -1,4 +1,4 @@
-document.ready
+1
 //My steps are define my global variables
 //Then to have a randomizer array to randomly select a word
 //Next step is set up a blank array to for the guessable word. 
@@ -8,54 +8,86 @@ let marvelCharacters= [
   "storm", 
   "cyclops", 
   "spiderman", 
-  "captainamerica", 
+  "captain america",
+  "hawkeye",
+  "winter soldier",
+  "falcon", 
   "thor", 
   "ironman", 
   "hulk", 
-  "captainmarvel", 
+  "star lord",
+  "gammora",
+  "groot",
+  "rocket",
+  "drax",
+  "captain marvel", 
   "wolverine", 
-  "blackwidow", 
-  "blackpanther", 
-  "marvelgirl", 
-  "mrfantastic", 
-  "drstrange", 
+  "black widow", 
+  "black panther", 
+  "marvel girl",  
+  "dr strange", 
   "thanos", 
-  "drdoom", 
-  "warmachine", 
+  "dr doom", 
+  "warmachine",
+  "bruce banner",
+  "ant-man",
+  "wasp",
+  "rescue",
+  "vision", 
   "daredevil", 
   "kingpin", 
   "magneto", 
   "juggernaut", 
   "namor", 
   "blackbolt", 
-  "professorx", 
-  "mrfantastic",
+  "professor x", 
+  "mr fantastic",
   "venom",
-  "invisiblewoman",
-  "humantorch",
-  "emmafrost",
+  "invisible woman",
+  "human torch",
+  "scarlet witch",
+  "quicksilver",
+  "phil coulson",
+  "nick fury",
+  "emma frost",
   "loki",
-  "greengoblin",
+  "green goblin",
   "punisher",
-  "milesmorales",
+  "miles morales",
   "toad",
   "sabertooth",
   "jubilee",
   "gambit",
   "beast",
+  "stan lee"
 
 ]
-//my global variables
-let wins = 0; //this is how many wins the user has
-let losses = 0; //this is how many losses they have
-let wrongGuess =[]; //
-let guessesLeft = 10;
-let solved = 0;
-let userGuesses = [];
-let finishedGame = false;
-let comPick;
+
+//creating a new object called game that will keep track of game state, current word, guessed lettes, wins and losses
+let objGame = {
+  "word":"",
+  "img":"",
+  "unguessed":"",
+  "wrongGuess":"[]",
+  "rightGuess":"[]",
+  "wins":0,
+  "losses":0,
+  "status":0
+}
 
 
+
+//my element variables
+let gameBoard = document.getElementById();
+let wins = document.getElementById();
+let losses = document.getElementById();
+let guessed = document.getElementById();
+let imgHangman = document.getElementById();
+let imgCharacter = document.getElementById();
+var txtHidden = document.getElementById();
+let gameOverMsg = document.getElementById();
+
+let letters = "abcdefghijklmnopqrstuvwxyz"
 
 //set all words to lowercase despite if a captial leetter is pressed
 
@@ -67,31 +99,45 @@ let comPick;
 function startGame() {
       
   
-        comPick = marvelCharacters[Math.floor(Math.random() * marvelCharacters.length)];
+
+  //writing a clear game function to clear away the game after each attempt
+  function clearGame() {
+
+    if (marvelCharacters.length > 0) {
+      
+    }
+  }
 
 
-          //this is where the images for the characters will go. 
 
 
-          //this will clear out the arrays each time
-            userGuesses = [];
-            wordGuessed = [];
 
-          //this is the for loop that will build the words with blanks
-            for (let i = 0; i < marvelCharacters[comPick].length; i++) {
-              wordGuessed.push('_');
-            }         
 
-            //these are the gamewin, gameover and titles
+//         comPick = marvelCharacters[Math.floor(Math.random() * marvelCharacters.length)];
 
-document.getElementById("pressKeyTryAgain").style.css.text= 'display:none'
 
-            //this function will refresh the screen
-            refreshScreen();
+//           //this is where the images for the characters will go. 
 
-};
-      //here is the acutal function
-  function refreshScreen() {
+
+//           //this will clear out the arrays each time
+//             userGuesses = [];
+//             wordGuessed = [];
+
+//           //this is the for loop that will build the words with blanks
+//             for (let i = 0; i < marvelCharacters[comPick].length; i++) {
+//               wordGuessed.push('_');
+//             }         
+
+//             //these are the gamewin, gameover and titles
+
+// document.getElementById("pressKeyTryAgain").style.csstext= 'display:none'
+
+//             //this function will refresh the screen
+//             refreshScreen();
+
+// };
+//       //here is the acutal function
+//   function refreshScreen() {
 
 
 
