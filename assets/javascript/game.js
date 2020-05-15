@@ -75,19 +75,30 @@ let objGame = {
   "status":0
 }
 
+let letters = "abcdefghijklmnopqrstuvwxyz"
 
 
 //my element variables
-let gameBoard = document.getElementById();
-let wins = document.getElementById();
-let losses = document.getElementById();
-let guessed = document.getElementById();
-let imgHangman = document.getElementById();
-let imgCharacter = document.getElementById();
-var txtHidden = document.getElementById();
-let gameOverMsg = document.getElementById();
+let gameBoard = document.getElementById(gameBoard);
+let wins = document.getElementById(wins);
+let losses = document.getElementById(losses);
+let guessed = document.getElementById(guessed);
+let imgHangman = document.getElementById(imgHangman);
+let imgCharacter = document.getElementById(imgCharacter);
+var txtHidden = document.getElementById(txthidden);
+let gameOverMsg = document.getElementById(gameOverMsg);
 
-let letters = "abcdefghijklmnopqrstuvwxyz"
+var chracterSRC = "assets/images/"
+wins.innertext = "WINS:" + objGame.wins;
+losses.innertext = "LOSSES:" +objGame.losses;
+
+document.addEventListener("click", function(event) {
+  if (!event.target.matches("#btnEscape")) {
+    return;
+  }
+
+  NextWord(); 
+}, false);
 
 //set all words to lowercase despite if a captial leetter is pressed
 
