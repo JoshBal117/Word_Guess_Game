@@ -95,6 +95,7 @@ losses.innertext = "LOSSES:" +objGame.losses;
 document.addEventListener("click", function(event) {
   if (!event.target.matches("#btnEscape")) {
     return;
+    console.log("return")
   }
 
   NextWord(); 
