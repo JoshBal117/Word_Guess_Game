@@ -13,11 +13,12 @@ let marvelCharacters= [
   "winter soldier",
   "falcon", 
   "thor", 
-  "ironman", 
+  "iron man", 
   "hulk", 
   "star lord",
-  "gammora",
+  "gamora",
   "groot",
+  "baby groot",
   "rocket",
   "drax",
   "captain marvel", 
@@ -99,9 +100,229 @@ document.addEventListener("click", function(event) {
   }
 
   NextWord(); 
+
+  
 }, false);
 
-//set all words to lowercase despite if a captial leetter is pressed
+clearBoard();
+
+
+function clearBoard() {
+
+  if (Arrwords.length > 0) {
+    objGame.status = 0
+    gameOverMsg.innerHTML = "";
+    imgHangman.src = "assets/images/Hangman/hangman_0.png"
+    objGame.wrongGuess = [];
+    objGame.rightGuess = [];
+    guessed.innerText = "GUESSED"
+    objGame.word = marvelCharacters[Math.floor(Math.random() * marvelCharacters.length)];
+    objGame.unguessed = findUniqueString(objGame.word);
+    objGame.unguessed = objGame.unguessed.replace(' ', '');
+    //This is a vairable to that remove the current word from marvelCharacters
+    var iCurrentWordIdx = marvelCharacters.indexOf(objGame.word);
+    marvelCharacters.splice(iCurrentWordIdx, 1);
+    gameBoard.innerText = hideUnguessedLetters(objGame).tpUpperCase()
+  
+
+
+//The following pictures are for when the characters are correctly guessed
+imgCharacter.src = ""
+characterSRC = "assets/images/characterImages"
+    switch (objGame.word) {
+        case "Ant-MAn":
+            characterSRC = characterSRC + "Ant-Man.jpeg"
+            break;
+        case "Baby Groot":
+            characterSRC = characterSRC + "BabyGroot.jpeg"
+            break;
+        case "Beast":
+            characterSRC = characterSRC + "Beast.jpeg"
+            break;
+        case "Black Bolt":
+            characterSRC = characterSRC + "BlackBolt.jpeg"
+            break;
+        case "Black Panther":
+            characterSRC = characterSRC + "BlackPanther.jpeg"
+            break;
+        case "Black Widow":
+            characterSRC = characterSRC + "BlackWidow.jpeg"
+            break;
+            case "Bruce Banner":
+            characterSRC = characterSRC + "Bruce_banner.jpeg"
+            break;
+            case "Captain America":
+            characterSRC = characterSRC + "Captain America.jpeg"
+            break;
+            case "Captain Marvel":
+            characterSRC = characterSRC + "CaptainMarvel.jpeg"
+            break;
+            case "Cyclops":
+            characterSRC = characterSRC + "Cyclops.jpeg"
+            break;
+            case "Daredevil":
+            characterSRC = characterSRC + "Daredevil.jpeg"
+            break;
+            case "Drax":
+            characterSRC = characterSRC + "Drax.jpeg"
+            break;
+            case "Dr Doom":
+            characterSRC = characterSRC + "DrDoom.jpeg"
+            break;
+            case "Dr Stange":
+            characterSRC = characterSRC + "DrStrange.jpeg"
+            break;
+            case "Emma Frost":
+            characterSRC = characterSRC + "EmmaFrost.png"
+            break;
+            case "Falcon":
+            characterSRC = characterSRC + "FAlcon.jpeg"
+            break;
+            case "Gambit":
+            characterSRC = characterSRC + "Gambit.jpeg"
+            break;
+            case "Gamora":
+            characterSRC = characterSRC + "Gamora.jpeg"
+            break;
+            case "Green Goblin":
+            characterSRC = characterSRC + "GreenGoblin.jpeg"
+            break;
+            case "Groot":
+            characterSRC = characterSRC + "groot.jpeg"
+            break;
+            case "Hulk":
+            characterSRC = characterSRC + "Hulk.jpeg"
+            break;
+            case "Iron Man":
+            characterSRC = characterSRC + "IronMan.jpeg"
+            break;
+            case "Invisible Woman":
+            characterSRC = characterSRC + "InvisibleWoman.png"
+            case "Jubilee":
+            characterSRC = characterSRC + "Jubilee.jpeg"
+            break;
+            case "Juggernaut":
+            characterSRC = characterSRC + "Juggernaut.jpeg"
+            break;
+            case "Loki":
+            characterSRC = characterSRC + "Loki.jpeg"
+            break;
+            case "Magneto":
+            characterSRC = characterSRC + "Magneto.jpeg"
+            break;
+            case "Mr Fantastic":
+            characterSRC = characterSRC + "MrFantastic.jpeg"
+            break;
+            case "Namor":
+            characterSRC = characterSRC + "Namor.jpeg"
+            break;
+            case "Nick Fury":
+            characterSRC = characterSRC + "NickFury.jpeg"
+            break;
+            case "Phil Coulson":
+            characterSRC = characterSRC + "PhilCoulson.jpeg"
+            break;
+            case "Professor X":
+            characterSRC = characterSRC + "ProfX.jpeg"
+            break;
+            case "Punisher":
+            characterSRC = characterSRC + "Punisher.jpeg"
+            break;
+          case "Quicksilver":
+            characterSRC = characterSRC + "Quicksilver.jpeg"
+            break;
+            case "Rocket":
+            characterSRC = characterSRC + "Rocket.jpeg"
+            break;
+            case "Sabertooth":
+            characterSRC = characterSRC + "Sabertooth.jpeg"
+            break;
+            case "Spider Man":
+            characterSRC = characterSRC + "SpiderMan.jpeg"
+            break;
+            case "Stan Lee":
+            characterSRC = characterSRC + "Stan Lee.jpeg"
+            break;
+            case "Star Lord":
+            characterSRC = characterSRC + "StarLord.jpeg"
+            break;
+            case "Storm":
+            characterSRC = characterSRC + "Storm.jpeg"
+            break;
+            case "Thanos":
+            characterSRC = characterSRC + "Thanos.jpeg"
+            break;
+            case "Thor":
+            characterSRC = characterSRC + "Thor.jpeg"
+            break;
+            case "Toad":
+            characterSRC = characterSRC + "Toad.jpeg"
+            break;
+            case "Venom":
+            characterSRC = characterSRC + "Venom.jpeg"
+            break;
+            case "Kingpin":
+            characterSRC = characterSRC + "WilsonFisk(Kingpin).jpeg"
+            break;
+            case "Wolverine":
+            characterSRC = characterSRC + "wolverine.jpeg"
+            break;    
+  }
+} else {
+  gameBoard.innerHTML = "GAME OVER"
+}
+
+}
+
+//This will find a uniue letter in a string, and makes sure that it has not been guessed
+function findUniqueString(str){
+  var unique = "";
+
+  for(var i=0;i < str.length;i++){
+
+      if(unique.indexOf(str.charAt(i)) == -1){
+          unique += str[i];
+      }        
+  }
+  return unique
+}
+
+
+//This function will replace unguessed letters with _ to be shown to the user
+
+
+function hideUnguessedLetters(objGame){
+    
+  displayWord = objGame.word
+  var sLetter = ""
+     
+  for(var i=0;i < objGame.unguessed.length; i++){
+              
+      sLetter = objGame.unguessed.charAt(i) 
+              
+      for(var x=0;x<objGame.word.length;x++){
+          if (objGame.word.charAt(x) == ' '){
+              //do nothing
+          }
+          else if (objGame.word.charAt(x) == sLetter){
+              displayWord = displayWord.replace(sLetter,'_');
+              //console.log(x + ' ' + objGame.word.charAt(x))
+          }
+
+      }
+
+  }
+  return displayWord
+}
+function NextWord(){
+
+  //If match was not yet won or lost, put word back in circulation.
+  if (objGame.status == 0){
+      arrWords.push(objGame.word);
+  }
+
+  clearBoard();
+}
 
 //set a string for generating the random word from
 //a list already provided. 

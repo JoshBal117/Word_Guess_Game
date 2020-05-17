@@ -1,0 +1,58 @@
+body{
+    background-image: url()    
+}
+header{
+    background-color:white;
+    border-bottom: solid 1px gray;
+    text-align: center;
+    width:100%;
+}
+.imgHeader{
+    height:100px;width:auto;
+}
+img{
+    height: 200px;width: auto;
+}
+#gameBoard{
+    font-family: monospace;
+    word-spacing: 20px;
+    font-size: 50px;
+    letter-spacing: 5px;
+}
+
+/* PHONE/TABLET RESPONSIVE STYLES */
+@media screen and (max-width: 1024px){
+    .col h1 {
+        font-size: 18px;
+    }
+    img{
+        height: 70px;width: auto;
+    }
+    .imgHeader{
+        height:70px;width:auto;
+    }
+    #btnEscape{
+        visibility: visible;
+    }
+    #gameOverMsg{
+        visibility: hidden;
+    }
+    #txtMobile{
+        visibility: visible;
+    }   
+    .mb-5{
+        margin-bottom: 1rem!important;
+    } 
+}
+/* DESKTOP/LAPTOP RESPONSIVE STYLES */
+@media screen and (min-width: 1025px){
+    #btnEscape{
+        visibility: hidden;
+    }
+    #gameOverMsg{
+        visibility: visible;
+    }
+    #txtMobile{
+        visibility: hidden;
+    }
+}
