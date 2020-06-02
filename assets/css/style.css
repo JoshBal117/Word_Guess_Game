@@ -1,8 +1,8 @@
 body{
-    background-image: url()    
+    background-image: url("../images/Marvel Background(2).jpg")    
 }
 header{
-    background-color:white;
+    background-color: transparent !important;
     border-bottom: solid 1px gray;
     text-align: center;
     width:100%;
